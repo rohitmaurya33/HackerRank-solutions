@@ -39,7 +39,7 @@ Explanation: "leeto" did not occur in "leetcode", so we return -1.
 **Language:** Java  
 **Runtime:** 1 ms (beats 50.01%)  
 **Memory:** 42.6 MB (beats 97.66%)  
-**Submitted:** 2026-10-14T16:44:56.859Z  
+**Submitted:** 2026-10-14T16:46:14.905Z  
 
 ```java
 
