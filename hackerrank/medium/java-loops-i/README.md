@@ -1,4 +1,4 @@
-# Java Output Formatting
+# Java Loops I
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -28,29 +28,30 @@ Print $10$ lines of output; each line $i$ (where $1 \le i \le 10$) contains the 
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-14T16:16:50.938Z  
+**Submitted:** 2026-10-14T16:23:30.233Z  
 
 ```java
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
 
-import java.util.Scanner;
+
 
 public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        int N = Integer.parseInt(bufferedReader.readLine().trim());
 
-        System.out.println("================================");
-
-        for (int i = 0; i < 3; i++) {
-            String s1 = sc.next();
-            int x = sc.nextInt();
-
-            System.out.printf("%-15s%03d%n", s1, x);
+        bufferedReader.close();
+        for(int i=1;i<=10;i++){
+            int table=N*i;
+            System.out.println(N+" x "+i+" = "+table);
         }
-
-        System.out.println("================================");
-
-        sc.close();
     }
 }
 
