@@ -1,14 +1,14 @@
 
-import java.util.*;
 
-public class Solution {
-    public static void main(String[] args) {
+ static int B, H;
+    static boolean flag = true;
+  static {
         Scanner sc = new Scanner(System.in);
-        int i = 1;
+        B = sc.nextInt();
+        H = sc.nextInt();
 
-        while (sc.hasNextLine()) {
-            System.out.println(i + " " + sc.nextLine());
-            i++;
-        }
-    }
-}
+        if (B <= 0 || H <= 0) {
+            System.out.println("java.lang.Exception: Breadth and height must be positive");
+            flag = false;
+        }}
+
