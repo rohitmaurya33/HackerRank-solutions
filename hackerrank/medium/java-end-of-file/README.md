@@ -1,4 +1,4 @@
-# Java Datatypes
+# Java End-of-file
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -29,42 +29,21 @@ For each line, print the line number, followed by a single space, and then the l
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-23T17:44:16.835Z  
+**Submitted:** 2026-10-23T17:47:33.174Z  
 
 ```java
 
 import java.util.*;
-import java.io.*;
 
-class Solution {
+public class Solution {
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
-        int t = sc.nextInt();
+        int i = 1;
 
-        for (int i = 0; i < t; i++) {
-            try {
-                long x = sc.nextLong();
-
-                System.out.println(x + " can be fitted in:");
-
-                if (x >= -128 && x <= 127)
-                    System.out.println("* byte");
-
-                if (x >= -32768 && x <= 32767)
-                    System.out.println("* short");
-
-                if (x >= -2147483648L && x <= 2147483647L)
-                    System.out.println("* int");
-
-                System.out.println("* long");
-
-            } catch (Exception e) {
-                System.out.println(sc.next() + " can't be fitted anywhere.");
-            }
+        while (sc.hasNextLine()) {
+            System.out.println(i + " " + sc.nextLine());
+            i++;
         }
-
-        sc.close();
     }
 }
 
