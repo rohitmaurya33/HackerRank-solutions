@@ -1,4 +1,4 @@
-# Java End-of-file
+# Java Static Initializer Block
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -53,23 +53,23 @@ If both values are greater than zero, then the *main* method must output the are
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-23T17:47:37.755Z  
+**Submitted:** 2026-10-23T17:53:16.397Z  
 
 ```java
 
-import java.util.*;
 
-public class Solution {
-    public static void main(String[] args) {
+ static int B, H;
+    static boolean flag = true;
+  static {
         Scanner sc = new Scanner(System.in);
-        int i = 1;
+        B = sc.nextInt();
+        H = sc.nextInt();
 
-        while (sc.hasNextLine()) {
-            System.out.println(i + " " + sc.nextLine());
-            i++;
-        }
-    }
-}
+        if (B <= 0 || H <= 0) {
+            System.out.println("java.lang.Exception: Breadth and height must be positive");
+            flag = false;
+        }}
+
 
 ```
 
