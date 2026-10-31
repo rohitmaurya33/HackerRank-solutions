@@ -45,24 +45,18 @@ Output: [3,4,6,16,17]
 
 **Language:** Java  
 **Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 43.9 MB (beats 79.11%)  
-**Submitted:** 2026-10-31T18:27:31.830Z  
+**Memory:** 43.8 MB (beats 84.81%)  
+**Submitted:** 2026-10-31T18:30:56.306Z  
 
 ```java
 class Solution {
     public int[] runningSum(int[] nums) {
 
-        int[] sum = new int[nums.length];
-
-        sum[0] = nums[0];
-
         for(int i = 1; i < nums.length; i++) {
-
-            sum[i] = sum[i-1] + nums[i];
-
+            nums[i] = nums[i] + nums[i-1];
         }
 
-        return sum;
+        return nums;
     }
 }
 ```
