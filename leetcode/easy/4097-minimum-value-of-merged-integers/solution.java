@@ -1,0 +1,20 @@
+
+class Solution {
+    public int minMergedInteger(int[] nums) {
+
+        int min = Integer.MAX_VALUE;
+
+        for (int i = 0; i < nums.length; i += 2) {
+
+            String f = String.valueOf(nums[i]) + String.valueOf(nums[i + 1]);
+
+            int num = Integer.parseInt(f);
+
+            if (num < min) {
+                min = num;
+            }
+        }
+
+        return min;
+    }
+}
