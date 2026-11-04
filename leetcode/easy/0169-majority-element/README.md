@@ -42,19 +42,29 @@ Output: 2
 ## Solution
 
 **Language:** Java  
-**Runtime:** 2 ms  
-**Memory:** 41.7 MB  
-**Submitted:** 2026-11-04T13:07:24.777Z  
+**Runtime:** 10 ms (beats 32.84%)  
+**Memory:** 62.5 MB (beats 58.02%)  
+**Submitted:** 2026-11-04T13:08:06.115Z  
 
 ```java
-    public int majorityElement(int[] nums) {
-        Arrays.sort(nums);
-         int count=1;
-        for(int i=1;i<nums.length;i++){
-            if(nums[i]==nums[i-1]){
-             count++;  
-            }
-
+class Solution {
+    public int majorityElement(int[] nums) {
+        Arrays.sort(nums);
+         int count=1;
+        for(int i=1;i<nums.length;i++){
+            if(nums[i]==nums[i-1]){
+             count++;  
+            }
+            else{
+                count=1;
+            }
+            if(count>nums.length/2){
+                  return nums[i];
+            }
+        }
+         return nums[0];
+    }
+}
 ```
 
 ---
