@@ -1,4 +1,4 @@
-# Java String Reverse
+# Java Currency Formatter
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -37,42 +37,36 @@ The second line contains a string $b$.
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-29T16:33:24.913Z  
+**Submitted:** 2026-11-04T06:21:53.031Z  
 
 ```java
-import java.io.*;
 import java.util.*;
+import java.text.*;
 
 public class Solution {
-
+    
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double payment = scanner.nextDouble();
+        scanner.close();
         
-        Scanner sc=new Scanner(System.in);
-        String A=sc.next();
+        // Write your code here.
+         NumberFormat usFormat = NumberFormat.getCurrencyInstance(Locale.US);
+        NumberFormat indiaFormat = NumberFormat.getCurrencyInstance(new Locale("en", "IN"));
+        NumberFormat chinaFormat = NumberFormat.getCurrencyInstance(Locale.CHINA);
+        NumberFormat franceFormat = NumberFormat.getCurrencyInstance(Locale.FRANCE);
+
+        String us = usFormat.format(payment);
+        String india = indiaFormat.format(payment);
+        String china = chinaFormat.format(payment);
+        String france = franceFormat.format(payment);
         
-        int left=0;
-        int right=A.length()-1;
-        boolean isPalindrome = true;
-        while(left<right){
-            if(A.charAt(left)!=A.charAt(right)){
-               isPalindrome = false;
-               break; 
-            }
-            left++;
-            right--;
-        }
-       if (isPalindrome) {
-        System.out.println("Yes");
-    } else {
-        System.out.println("No");
-    }
-        /* Enter your code here. Print output to STDOUT. */
-        
+        System.out.println("US: " + us);
+        System.out.println("India: " + india);
+        System.out.println("China: " + china);
+        System.out.println("France: " + france);
     }
 }
-
-
-
 
 ```
 
