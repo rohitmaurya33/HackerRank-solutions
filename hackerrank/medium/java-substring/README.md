@@ -1,4 +1,4 @@
-# Java Strings Introduction
+# Java Substring
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -26,38 +26,27 @@ Print the substring in the inclusive range from $start$ to $end-1$.
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-11-04T12:13:25.417Z  
+**Submitted:** 2026-11-05T10:27:34.815Z  
 
 ```java
 import java.io.*;
 import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
 
 public class Solution {
 
     public static void main(String[] args) {
-        
-        Scanner sc=new Scanner(System.in);
-        String A=sc.next();
-        String B=sc.next();
-        /* Enter your code here. Print output to STDOUT. */
-        int len1=A.length();
-        int len2=B.length();
-        System.out.println(len1+len2);
-        if(A.compareTo(B)>0){
-            System.out.println("Yes"); 
+        Scanner in = new Scanner(System.in);
+        String S = in.next();
+        int start = in.nextInt();
+        int end = in.nextInt();
+        for(int i=start;i<end;i++){
+            System.out.print(S.charAt(i));
         }
-        else {
-             System.out.println("No");
-        }
-        String result1 = A.substring(0, 1).toUpperCase() + A.substring(1);
-        String result2 = B.substring(0, 1).toUpperCase() + B.substring(1);
-        System.out.println(result1+" "+result2);
-
     }
 }
-
-
-
 
 ```
 
