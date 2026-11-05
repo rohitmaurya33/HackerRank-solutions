@@ -1,4 +1,4 @@
-# Java Substring
+# Java Substring Comparisons
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -44,27 +44,31 @@ The second line contains an integer denoting $k$.
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-11-05T10:27:39.103Z  
+**Submitted:** 2026-11-05T10:33:21.955Z  
 
 ```java
-import java.io.*;
-import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
 
-public class Solution {
 
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        String S = in.next();
-        int start = in.nextInt();
-        int end = in.nextInt();
-        for(int i=start;i<end;i++){
-            System.out.print(S.charAt(i));
+    public static String getSmallestAndLargest(String s, int k) {
+       String smallest = s.substring(0, k);
+        String largest = s.substring(0, k);
+
+        for (int i = 1; i <= s.length() - k; i++) {
+
+            String sub = s.substring(i, i + k);
+
+            if (sub.compareTo(smallest) < 0) {
+                smallest = sub;
+            }
+
+            if (sub.compareTo(largest) > 0) {
+                largest = sub;
+            }
         }
+
+        return smallest + "\n" + largest;
     }
-}
+
 
 ```
 
