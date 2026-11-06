@@ -1,4 +1,4 @@
-# Java Anagrams
+# Java String Tokens
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -26,45 +26,36 @@ On the first line, print an integer, $n$, denoting the number of tokens in strin
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-11-04T06:56:33.239Z  
+**Submitted:** 2026-11-06T10:21:42.666Z  
 
 ```java
+import java.io.*;
+import java.util.*;
 
-    static boolean isAnagram(String a, String b) {
-         a=a.toLowerCase();
-         b=b.toLowerCase();
-         if(a.length()!=b.length()){
-            return false;
-         }
-         
-         char[] arr1=a.toCharArray();
-         char[] arr2=b.toCharArray();
-         
-         
-          for(int i=0;i<arr1.length;i++){
-            for(int j=i+1;j<arr1.length;j++){
-                if(arr1[i]>arr1[j]){
-                    char temp=arr1[i];
-                    arr1[i]=arr1[j];
-                    arr1[j]=temp;
-                }
-                
-                 if(arr2[i]>arr2[j]){
-                    char temp=arr2[i];
-                    arr2[i]=arr2[j];
-                    arr2[j]=temp;
-                }
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String s = scan.nextLine();
+        // Write your code here.
+        
+        String[] arr = s.trim().split("[ !,?._'@]+");
+
+        if (s.trim().isEmpty()) {
+            System.out.println(0);
+        } else {
+            System.out.println(arr.length);
+
+            for (int i = 0; i < arr.length; i++) {
+                System.out.println(arr[i]);
             }
-          }
-            for (int i = 0; i < arr1.length; i++) {
-        if (arr1[i] != arr2[i]) {
-            return false;
         }
-    }
 
-    return true;
-          
-            }
+        scan.close();
+
+        
+    }
+}
 
 
 ```
