@@ -1,28 +1,26 @@
-import java.io.*;
-import java.util.*;
+import java.util.Scanner;
+import java.util.regex.*;
 
 public class Solution {
-
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        String s = scan.nextLine();
-        // Write your code here.
-        
-        String[] arr = s.trim().split("[ !,?._'@]+");
 
-        if (s.trim().isEmpty()) {
-            System.out.println(0);
-        } else {
-            System.out.println(arr.length);
+        Scanner in = new Scanner(System.in);
 
-            for (int i = 0; i < arr.length; i++) {
-                System.out.println(arr[i]);
+        int testCases = Integer.parseInt(in.nextLine());
+
+        while (testCases > 0) {
+
+            String pattern = in.nextLine();
+
+            try {
+                Pattern.compile(pattern);
+                System.out.println("Valid");
             }
+            catch (PatternSyntaxException e) {
+                System.out.println("Invalid");
+            }
+
+            testCases--;
         }
-
-        scan.close();
-
-        
     }
 }
-
