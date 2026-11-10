@@ -63,9 +63,9 @@ Java
 ## Solution
 
 **Language:** Java  
-**Runtime:** 9 ms (beats 8.44%)  
-**Memory:** 47.7 MB (beats 9.93%)  
-**Submitted:** 2026-11-10T10:47:06.380Z  
+**Runtime:** 135 ms (beats 5.03%)  
+**Memory:** 46.8 MB (beats 83.30%)  
+**Submitted:** 2026-11-10T11:48:17.653Z  
 
 ```java
 
@@ -73,17 +73,20 @@ import java.util.Arrays;
 
 class Solution {
     public int missingNumber(int[] nums) {
-        Arrays.sort(nums);
+        for(int i=0;i<=nums.length;i++){
+            int flag=0;
+            for(int j=0;j<nums.length;j++){
+                if(nums[j]==i){
+                    flag=1;
+                    break;
+                }
 
-        int n = nums.length;
-
-        for(int i = 0; i < n; i++) {
-            if(nums[i] != i) {
+            }
+            if(flag==0){
                 return i;
             }
         }
-
-        return n;
+        return -1;
     }
 }
 
