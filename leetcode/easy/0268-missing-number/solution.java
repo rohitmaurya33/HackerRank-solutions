@@ -3,16 +3,19 @@ import java.util.Arrays;
 
 class Solution {
     public int missingNumber(int[] nums) {
-        Arrays.sort(nums);
+        for(int i=0;i<=nums.length;i++){
+            int flag=0;
+            for(int j=0;j<nums.length;j++){
+                if(nums[j]==i){
+                    flag=1;
+                    break;
+                }
 
-        int n = nums.length;
-
-        for(int i = 0; i < n; i++) {
-            if(nums[i] != i) {
+            }
+            if(flag==0){
                 return i;
             }
         }
-
-        return n;
+        return -1;
     }
 }
